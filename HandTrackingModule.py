@@ -27,6 +27,7 @@ class HandDetector:
         return img
 
 
+
 def main():
     cap = cv2.VideoCapture(0)
     detector = HandDetector()
