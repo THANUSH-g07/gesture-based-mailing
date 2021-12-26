@@ -2,6 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 import threading
 
+
 class ThunderAssistant:
 
     def speak(self, message):
@@ -21,14 +22,13 @@ class ThunderAssistant:
         r = sr.Recognizer()
         mic = sr.Microphone(device_index=1)
         with mic as source:
+            print("listening ...")
             audio = r.listen(source, timeout=10)
-            return r.recognize_google(audio)
+            text = r.recognize_google(audio)
+            return text
+
 
 if __name__ == "__main__":
     assitant = ThunderAssistant()
-    assitant.listen()
-    #t1 = threading.Thread(target=assitant.speak("hello"))
-    #t2 = threading.Thread(target=assitant.listen())
-    #t1.start()
-    #t2.start()
+    print(assitant.listen())
     print("Done!")

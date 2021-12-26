@@ -1,5 +1,5 @@
 # multi threading works
-import threading
+'''import threading
 class test:
     def printer(self):
         for ctr in range(1000000):
@@ -15,17 +15,20 @@ if __name__ == "__main__":
     t2 = threading.Thread(target=test1.printer)
     t1.start()
     t2.start()
-    print("Done!")
+    print("Done!")'''
 
 # speech recognition
 
-import speech_recognition as sr
+'''import speech_recognition as sr
 
 
 def listen():
-    recognizer = sr.Recognizer()
-    mic = sr.Microphone(device_index=1)
+    r = sr.Recognizer()
+    mic = sr.Microphone(device_index = 1)
     with mic as source:
-        audio = recognizer.listen(source, timeout=10)
-        return recognizer.recognize_google(audio)
-print(listen())
+        print("listening ...")
+        audio = r.listen(source,timeout=10)
+        text = r.recognize_google(audio)
+        return text
+print(listen())'''
+
