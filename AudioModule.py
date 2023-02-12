@@ -4,21 +4,14 @@ import threading
 
 
 class ThunderAssistant:
-
-    def speak(self, message):
+    @staticmethod
+    def speak(message):
         engine = pyttsx3.init()
         engine.say(message)
         engine.runAndWait()
 
-    def printer(self):
-        for ctr in range(1000000):
-            print("hello")
-
-    def printHi(self):
-        for ctr in range(1000000):
-            print("hi")
-
-    def listen(self):
+    @staticmethod
+    def listen():
         r = sr.Recognizer()
         mic = sr.Microphone(device_index=1)
         with mic as source:
@@ -29,6 +22,5 @@ class ThunderAssistant:
 
 
 if __name__ == "__main__":
-    assitant = ThunderAssistant()
-    print(assitant.listen())
+    print(ThunderAssistant.listen())
     print("Done!")
